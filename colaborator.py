@@ -61,3 +61,64 @@ for i, (question, options, correct) in enumerate(selected_questions, 1):
 # Final Score
 print(f"🎉 Quiz Over! Your score: {score}/20")
 
+
+#DONE BY YOHANNIS
+uiz = {
+    "Maths": [
+        {"q": "1. What is 12 × 8?", "options": ["a) 96", "b) 108", "c) 84", "d) 112"], "ans": "a"},
+        {"q": "2. Solve: 15 + 27 = ?", "options": ["a) 32", "b) 42", "c) 40", "d) 52"], "ans": "d"},
+        {"q": "3. Perimeter of a square = 40 cm. One side?", "options": ["a) 5", "b) 8", "c) 10", "d) 12"], "ans": "c"},
+        {"q": "4. What is (3/4) × 16?", "options": ["a) 10", "b) 12", "c) 14", "d) 18"], "ans": "b"},
+        {"q": "5. If x=5, find 2x² + 3.", "options": ["a) 28", "b) 45", "c) 53", "d) 60"], "ans": "c"},
+    ],
+    "English": [
+        {"q": "1. Synonym of 'Happy'?", "options": ["a) Sad", "b) Angry", "c) Joyful", "d) Tired"], "ans": "c"},
+        {"q": "2. Which is a noun?", "options": ["a) Run", "b) Beautiful", "c) Chair", "d) Quickly"], "ans": "c"},
+        {"q": "3. Fill in: She ___ going to the market.", "options": ["a) is", "b) are", "c) were", "d) be"], "ans": "a"},
+        {"q": "4. Which sentence is past tense?", "options": ["a) He eats an apple.", "b) She is eating.", "c) They will eat.", "d) He ate an apple."], "ans": "d"},
+        {"q": "5. Correct spelling?", "options": ["a) Recieve", "b) Receive", "c) Recive", "d) Receeve"], "ans": "b"},
+    ],
+    "Biology": [
+        {"q": "1. 'Powerhouse of the cell'?", "options": ["a) Nucleus", "b) Ribosome", "c) Mitochondrion", "d) Golgi"], "ans": "c"},
+        {"q": "2. Basic unit of life?", "options": ["a) Organ", "b) Cell", "c) Tissue", "d) Organ system"], "ans": "b"},
+        {"q": "3. Blood cells fighting infections?", "options": ["a) RBC", "b) WBC", "c) Platelets", "d) Plasma"], "ans": "b"},
+        {"q": "4. DNA stores info in:", "options": ["a) Amino acids", "b) Nucleotides", "c) Fatty acids", "d) Polysaccharides"], "ans": "b"},
+        {"q": "5. Photosynthesis occurs in:", "options": ["a) Nucleus", "b) Chloroplast", "c) Mitochondria", "d) Vacuole"], "ans": "b"},
+    ],
+    "Physics": [
+        {"q": "1. SI unit of force?", "options": ["a) Watt", "b) Joule", "c) Newton", "d) Pascal"], "ans": "c"},
+        {"q": "2. Energy change in bulb?", "options": ["a) Heat→Light", "b) Electrical→Light", "c) Chemical→Heat", "d) Light→Heat"], "ans": "b"},
+        {"q": "3. Speed of light (vacuum)?", "options": ["a) 3×10⁸ m/s", "b) 3×10⁶ m/s", "c) 3×10⁵ m/s", "d) 3×10⁹ m/s"], "ans": "a"},
+        {"q": "4. Who discovered gravitation?", "options": ["a) Einstein", "b) Galileo", "c) Newton", "d) Watt"], "ans": "c"},
+        {"q": "5. Lens in magnifying glass?", "options": ["a) Concave", "b) Convex", "c) Plane", "d) Cylindrical"], "ans": "b"},
+    ],
+    "Chemistry": [
+        {"q": "1. Symbol for Sodium?", "options": ["a) So", "b) Na", "c) S", "d) Sn"], "ans": "b"},
+        {"q": "2. Gas for respiration?", "options": ["a) CO₂", "b) O₂", "c) N₂", "d) H₂"], "ans": "b"},
+        {"q": "3. Water is made of:", "options": ["a) H + N", "b) O + C", "c) H + O", "d) C + H"], "ans": "c"},
+        {"q": "4. pH of neutral solution?", "options": ["a) 0", "b) 7", "c) 14", "d) 10"], "ans": "b"},
+        {"q": "5. Pencil 'lead' is actually:", "options": ["a) Graphite (C)", "b) Lead", "c) Zinc", "d) Copper"], "ans": "a"},
+    ]
+}
+
+score = 0
+total = sum(len(qs) for qs in quiz.values())
+
+print("📘 Multi-Subject Quiz 📘")
+print("------------------------")
+
+for subject, questions in quiz.items():
+    print(f"\n🔹 {subject} Section 🔹")
+    for q in questions:
+        print("\n" + q["q"])
+        for option in q["options"]:
+            print(option)
+        user = input("Your answer (a/b/c/d): ").lower()
+        if user == q["ans"]:
+            print("✅ Correct!")
+            score += 1
+        else:
+            correct_text = q["options"][ord(q["ans"]) - 97]
+            print(f"❌ Wrong! Correct answer: {q['ans']}) {correct_text}")
+
+print(f"\n🎯 Final Score: {score}/{total}")
