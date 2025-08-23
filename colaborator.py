@@ -122,3 +122,203 @@ for subject, questions in quiz.items():
             print(f"❌ Wrong! Correct answer: {q['ans']}) {correct_text}")
 
 print(f"\n🎯 Final Score: {score}/{total}")
+
+# this part is done by Mihret
+
+QUESTIONS = [
+    # ---------------------------- Biology (5) ----------------------------
+    {
+        "subject": "Biology",
+        "question": "Which organelle is known as the 'powerhouse of the cell'?",
+        "choices": ["Ribosome", "Mitochondrion", "Golgi apparatus", "Lysosome"],
+        "answer": "B",
+        "explanation": "Mitochondria generate ATP through cellular respiration."
+    },
+    {
+        "subject": "Biology",
+        "question": "DNA stands for:",
+        "choices": ["Deoxyribonucleic Acid", "Dideoxyribonucleic Acid", "Dioxyribonitric Acid", "Deoxyriboprotein Acid"],
+        "answer": "A",
+        "explanation": "DNA is Deoxyribonucleic Acid; it stores genetic information."
+    },
+    {
+        "subject": "Biology",
+        "question": "In plants, which organelle carries out photosynthesis?",
+        "choices": ["Mitochondrion", "Chloroplast", "Nucleus", "Peroxisome"],
+        "answer": "B",
+        "explanation": "Chloroplasts contain chlorophyll and perform photosynthesis."
+    },
+    {
+        "subject": "Biology",
+        "question": "Which blood cells primarily carry oxygen in humans?",
+        "choices": ["White blood cells", "Platelets", "Red blood cells", "Plasma cells"],
+        "answer": "C",
+        "explanation": "Red blood cells contain hemoglobin that binds oxygen."
+    },
+    {
+        "subject": "Biology",
+        "question": "The human heart has how many chambers?",
+        "choices": ["2", "3", "4", "5"],
+        "answer": "C",
+        "explanation": "The heart has 4 chambers: right/left atria and ventricles."
+    },
+
+    # ---------------------------- Chemistry (5) ----------------------------
+    {
+        "subject": "Chemistry",
+        "question": "The atomic number of an element equals the number of:",
+        "choices": ["Neutrons", "Electrons only", "Protons", "Protons + neutrons"],
+        "answer": "C",
+        "explanation": "Atomic number equals the number of protons in the nucleus."
+    },
+    {
+        "subject": "Chemistry",
+        "question": "A solution with pH = 3 is:",
+        "choices": ["Neutral", "Basic (alkaline)", "Acidic", "Buffer"],
+        "answer": "C",
+        "explanation": "pH below 7 indicates an acidic solution."
+    },
+    {
+        "subject": "Chemistry",
+        "question": "Sodium chloride (NaCl) is held together mainly by which bond?",
+        "choices": ["Ionic bond", "Covalent bond", "Hydrogen bond", "Metallic bond"],
+        "answer": "A",
+        "explanation": "Na+ and Cl− form an ionic bond via electrostatic attraction."
+    },
+    {
+        "subject": "Chemistry",
+        "question": "Water (H₂O) is best described as:",
+        "choices": ["A nonpolar molecule", "A polar molecule", "An ionic compound", "A metallic compound"],
+        "answer": "B",
+        "explanation": "H₂O is polar due to its bent shape and electronegativity difference."
+    },
+    {
+        "subject": "Chemistry",
+        "question": "Which state of matter has a definite volume but no definite shape?",
+        "choices": ["Solid", "Liquid", "Gas", "Plasma"],
+        "answer": "B",
+        "explanation": "Liquids have definite volume but take the shape of their container."
+    },
+
+    # ---------------------------- Mathematics (5) ----------------------------
+    {
+        "subject": "Maths",
+        "question": "Solve for x: 2x + 5 = 13",
+        "choices": ["x = 3", "x = 4", "x = 5", "x = 6"],
+        "answer": "B",
+        "explanation": "2x = 8 ⇒ x = 4."
+    },
+    {
+        "subject": "Maths",
+        "question": "The derivative of f(x) = x² is:",
+        "choices": ["2x", "x", "x²", "2"],
+        "answer": "A",
+        "explanation": "d/dx(x²) = 2x."
+    },
+    {
+        "subject": "Maths",
+        "question": "Area of a circle with radius r = 3 is:",
+        "choices": ["6π", "9π", "12π", "18π"],
+        "answer": "B",
+        "explanation": "A = πr² = π(3²) = 9π."
+    },
+    {
+        "subject": "Maths",
+        "question": "A fair coin is tossed once. Probability of getting heads is:",
+        "choices": ["0", "1/4", "1/2", "1"],
+        "answer": "C",
+        "explanation": "Two equally likely outcomes; heads probability = 1/2."
+    },
+    {
+        "subject": "Maths",
+        "question": "Simple interest on $1000 at 5% per year for 2 years is:",
+        "choices": ["$50", "$100", "$150", "$200"],
+        "answer": "B",
+        "explanation": "I = P r t = 1000×0.05×2 = $100."
+    },
+
+    # ---------------------------- Physics (5) ----------------------------
+    {
+        "subject": "Physics",
+        "question": "The SI unit of force is:",
+        "choices": ["Joule", "Watt", "Newton", "Pascal"],
+        "answer": "C",
+        "explanation": "Force is measured in newtons (N)."
+    },
+    {
+        "subject": "Physics",
+        "question": "A car travels 120 km in 2 hours. Its average speed is:",
+        "choices": ["40 km/h", "50 km/h", "60 km/h", "80 km/h"],
+        "answer": "C",
+        "explanation": "Speed = distance/time = 120/2 = 60 km/h."
+    },
+    {
+        "subject": "Physics",
+        "question": "According to Ohm's law, current I = V/R. For V=12 V and R=6 Ω, I is:",
+        "choices": ["0.5 A", "1 A", "2 A", "3 A"],
+        "answer": "C",
+        "explanation": "I = 12/6 = 2 A."
+    },
+    {
+        "subject": "Physics",
+        "question": "The SI unit of energy is:",
+        "choices": ["Newton", "Joule", "Coulomb", "Tesla"],
+        "answer": "B",
+        "explanation": "Energy is measured in joules (J)."
+    },
+    {
+        "subject": "Physics",
+        "question": "Near Earth's surface, the acceleration due to gravity g is approximately:",
+        "choices": ["4.9 m/s²", "8.9 m/s²", "9.8 m/s²", "12.0 m/s²"],
+        "answer": "C",
+        "explanation": "Standard value is ~9.8 m/s²."
+    },
+]
+
+CHOICE_LETTERS = ["A", "B", "C", "D"]
+
+def ask_question(q, idx):
+    print(f"\nQ{idx}. [{q['subject']}] {fill(q['question'], width=80)}")
+    for i, choice in enumerate(q["choices"], start=1):
+        print(f"  {CHOICE_LETTERS[i-1]}) {choice}")
+    while True:
+        ans = input("Your answer (A/B/C/D or 1-4): ").strip().upper()
+        if ans in CHOICE_LETTERS:
+            break
+        if ans in {"1", "2", "3", "4"}:
+            ans = CHOICE_LETTERS[int(ans)-1]
+            break
+        print("Invalid input. Please enter A, B, C, D or 1, 2, 3, 4.")
+    correct = (ans == q["answer"].upper())
+    if correct:
+        print("✅ Correct!")
+    else:
+        correct_letter = q["answer"].upper()
+        correct_text = q["choices"][CHOICE_LETTERS.index(correct_letter)]
+        print(f"❌ Incorrect. Correct answer: {correct_letter}) {correct_text}")
+    print(f"Explanation: {q['explanation']}")
+    return 1 if correct else 0
+
+def run_quiz():
+    print("Welcome to the 20-question MCQ Quiz (Biology, Chemistry, Maths, Physics)!")
+    print("Type A/B/C/D or 1/2/3/4 to answer. Good luck!")
+    questions = QUESTIONS[:]
+    random.shuffle(questions)
+    score = 0
+    for i, q in enumerate(questions, start=1):
+        score += ask_question(q, i)
+    percent = (score / len(questions)) * 100
+    print("\n—" * 40)
+    print(f"Your score: {score}/{len(questions)} ({percent:.1f}%)")
+    if percent == 100:
+        remark = "Perfect score! 🎉"
+    elif percent >= 80:
+        remark = "Great job!"
+    elif percent >= 50:
+        remark = "Not bad — keep practicing!"
+    else:
+        remark = "Keep studying — you can do it!"
+    print(remark)
+
+if __name__ == "__main__":
+    run_quiz()
