@@ -322,3 +322,206 @@ def run_quiz():
 
 if __name__ == "__main__":
     run_quiz()
+
+    # this part is done by Mubarek
+    
+    Q1=""" is the synonym of "happy"?
+   – A) Sad
+   – B) Joyful
+   – C) Angry
+   – D) Tired"""
+   
+
+Q2=""" Which of the following sentences is grammatically correct?
+   – A) She go to the store.
+   – B) She goes to the store.
+   – C) She going to the store.
+   – D) She gone to the store."""
+   
+
+Q3=""" What is the antonym of "difficult"?
+     A) Hard
+   – B) Easy
+   – C) Tough
+   – D) Complicated"""
+
+
+Q4=""" Which word is a noun?
+   – A) Quickly
+   – B) Beautiful
+   – C) Happiness
+   – D) Run"""
+   
+
+
+Q5=""" What is 7 + 5?
+   – A) 10
+   – B) 11
+   – C) 12
+   – D) 13"""
+  
+
+Q6=""" What is the value of x in the equation 2x + 3 = 11?
+   – A) 2
+   – B) 3
+   – C) 4
+   – D) 5"""
+  
+
+Q7="""What is the area of a rectangle with length 5 and width 3?
+   – A) 8
+   – B) 15
+   – C) 10
+   – D) 20"""
+   
+
+Q8=""" What is 15% of 200?
+   – A) 25
+   – B) 30
+   – C) 35
+   – D) 40"""
+   
+
+
+Q9=""" What is the chemical symbol for water?
+   – A) H2O
+   – B) O2H
+   – C) HO2
+   – D) H2O2"""
+   
+
+Q10=""" Which element has the atomic number 6?
+   – A) Oxygen
+   – B) Carbon
+   – C) Nitrogen
+   – D) Hydrogen"""
+   
+
+Q11=""" What is the pH level of pure water?
+   – A) 0
+   – B) 7
+   – C) 14
+   – D) 10"""
+
+
+Q12=""" Which of the following is a noble gas?
+   – A) Oxygen
+   – B) Nitrogen
+   – C) Neon
+   – D) Hydrogen"""
+   
+
+
+Q13=""" What is the unit of force?
+   – A) Joule
+   – B) Newton
+   – C) Watt
+   – D) Pascal"""
+   
+
+Q14=""" What is the speed of light in a vacuum?
+   – A) 300,000 km/s
+   – B) 150,000 km/s
+   – C) 450,000 km/s
+   – D) 600,000 km/s"""
+  
+
+Q15=""" Which law states that for every action, there is an equal and opposite reaction?
+   – A) Newton's First Law
+   – B) Newton's Second Law
+   – C) Newton's Third Law
+   – D) Law of Conservation of Energy"""
+
+
+Q16=""" What is the acceleration due to gravity on Earth?
+   – A) 9.8 m/s²
+   – B) 8.8 m/s²
+   – C) 10.8 m/s²
+   – D) 11.8 m/s²"""
+   
+
+
+Q17=""" What is the basic unit of life?
+   – A) Tissue
+   – B) Organism
+   – C) Cell
+   – D) Organ"""
+  
+
+Q18=""" Which organ is responsible for pumping blood in the human body?
+   – A) Lungs
+   – B) Brain
+   – C) Heart
+   – D) Liver"""
+ 
+
+Q19=""" What process do plants use to make their food?
+   – A) Respiration
+   – B) Photosynthesis
+   – C) Digestion
+   – D) Fermentation"""
+   
+
+Q20=""" What is the genetic material found in living organisms?
+   – A) RNA
+   – B) DNA
+   – C) Protein
+   – D) Lipid"""
+  
+
+
+Q21=""" If a car travels at a speed of 60 km/h, how far will it travel in 2 hours?
+   – A) 100 km
+   – B) 120 km
+   – C) 140 km
+   – D) 150 km"""
+   
+
+Q22=""" If you have three apples and you take away two, how many do you have?
+   – A) One apple
+   – B) Two apples
+   – C) Three apples
+   – D) None"""
+   
+
+Q23=""" A train leaves a station at 3 PM and travels at a speed of 80 km/h. What time will it arrive after traveling for 4 hours?
+    – A) 6 PM
+    – B) 7 PM
+    – C) 8 PM
+    – D) 9 PM"""
+   
+
+Q24=""" If a rectangle has a length of 10 cm and a width of 5 cm, what is its perimeter?
+    – A) 20 cm
+    – B) 30 cm
+    – C) 40 cm
+    – D) 50 cm"""
+
+
+
+print("welcome to the quiz")
+name = input("enter your full name ")
+print(f"dear{"welcome to the exam "}")
+print("please read the following instruction carefully ")
+print("instruction 1: don't forgot to write your full name ")
+print("instruction 2:cheating will nullify your total result ")
+
+mark = 0 
+
+for item in questions :
+    print(item)
+    answer = input("choose the correct answer  a/b/c/d").lower()
+    if answer == questions[item]:
+        print(f"{answer} is corect answer you got 1 point")
+        mark = mark + 1
+    else :
+        print(f"{answer} is incorrect : {questions[item]} is the correct answer ")
+        mark = mark
+    if mark >= 20 :
+        print("{mark}, exellent")
+    elif mark >= 16 :
+        print("{mark}, good")
+    elif mark >= 12 :
+        print("{mark}, satisfactory")
+    else :
+        print("{mark}, fail ")
